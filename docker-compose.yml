@@ -1,0 +1,13 @@
+version: '3'
+services:
+  proxy:
+    image: jwilder/nginx-proxy
+    volumes: 
+     - /var/run/docker.sock:/tmp/docker.sock:ro
+     
+  geoserver:
+    image: mbaussier/inao_geoserver:latest
+    restart: on-failure
+    environment:
+     - VIRTUAL_HOST=geoserver.sig-inao.fr
+    

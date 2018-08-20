@@ -2,6 +2,8 @@ version: '3'
 services:
   proxy:
     image: jwilder/nginx-proxy
+    ports:
+     - "80:80"
     volumes: 
      - /var/run/docker.sock:/tmp/docker.sock:ro
      
@@ -10,4 +12,13 @@ services:
     restart: on-failure
     environment:
      - VIRTUAL_HOST=geoserver.sig-inao.fr
-    
+    volumes:
+     - /home/geoserver/config:/opt/geoserver/data_dir
+  
+  app:
+    image: mbaussier/inao_app:latest
+    restart: on-failure
+    environment:
+     - VIRTUAL_HOST=app.sig-inao.fr
+    volumes: 
+     - /home/app/config:/home/Inao_app/config

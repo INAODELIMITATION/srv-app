@@ -19,6 +19,6 @@ services:
     image: mbaussier/inao_app:latest
     restart: on-failure
     environment:
-     - VIRTUAL_HOST=sig-inao.fr
+     - VIRTUAL_HOST=www.sig-inao.fr
     volumes: 
      - /home/app/config:/home/Inao_app/config

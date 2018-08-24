@@ -13,7 +13,7 @@ services:
     environment:
      - VIRTUAL_HOST=geoserver.sig-inao.fr
     volumes:
-     - /home/geoserver/config:/opt/geoserver/data_dir
+     - /home/geoserver:/opt/geoserver/data_dir
   
   app:
     image: mbaussier/inao_app:latest

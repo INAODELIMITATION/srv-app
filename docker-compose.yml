@@ -4,28 +4,13 @@ services:
     image: jwilder/nginx-proxy
     ports:
      - "80:80"
-     - "443:443"
     volumes: 
      - /var/run/docker.sock:/tmp/docker.sock:ro
-     - /home/certs:/etc/nginx/certs:ro
-     - /etc/nginx/vhost.d
-     - /usr/share/nginx/html
-    labels: 
-     - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true
-  
-  letsencrypt:
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    restart: on-failure
-    volumes: 
-      - /home/certs:/etc/nginx/certs:rw
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      
+
   geoserver:
     image: mbaussier/inao_geoserver:latest
     restart: on-failure
     environment:
-     - LETSENCRYPT_EMAIL=m.baussier@inao.gouv.fr
-     - LETSENCRYPT_HOST=geoserver.sig-inao.fr
      - VIRTUAL_HOST=geoserver.sig-inao.fr
     volumes:
      - /home/geoserver/config:/opt/geoserver/data_dir
@@ -34,8 +19,6 @@ services:
     image: mbaussier/inao_app:latest
     restart: on-failure
     environment:
-     - LETSENCRYPT_EMAIL=m.baussier@inao.gouv.fr
-     - LETSENCRYPT_HOST=sig-inao.fr
      - VIRTUAL_HOST=sig-inao.fr
     volumes: 
      - /home/app/config:/home/Inao_app/config

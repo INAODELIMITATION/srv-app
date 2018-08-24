@@ -38,6 +38,15 @@
    cd /home
    git clone https://github.com/INAODELIMITATION/srv-app.git   
    ```
+- Lancement des micro-services
+  ```
+  docker-compose up -d
+  ```
+
+- Suppression des micro-services
+  ```
+  docker-compose stop && docker-compose rm
+  ```
 
 ## Système de sauvegarde d'OVH
 OVH nous met à disposition un espace de 500Go de sauvegarde séparé de notre serveur mais hebergé par leurs services. 

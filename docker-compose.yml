@@ -2,12 +2,9 @@ version: '3'
 services:
   proxy:
     image: jwilder/nginx-proxy
-<<<<<<< HEAD
     ports:
      - "80:80"
      - "443:443"
-=======
->>>>>>> parent of 8bda001... modification de docker docker-compose.yml
     volumes: 
      - /var/run/docker.sock:/tmp/docker.sock:ro
      - /home/certs:/etc/nginx/certs:ro
@@ -30,7 +27,6 @@ services:
      - LETSENCRYPT_EMAIL=m.baussier@inao.gouv.fr
      - LETSENCRYPT_HOST=geoserver.sig-inao.fr
      - VIRTUAL_HOST=geoserver.sig-inao.fr
-<<<<<<< HEAD
     volumes:
      - /home/geoserver/config:/opt/geoserver/data_dir
   
@@ -43,6 +39,3 @@ services:
      - VIRTUAL_HOST=sig-inao.fr
     volumes: 
      - /home/app/config:/home/Inao_app/config
-=======
-    
->>>>>>> parent of 8bda001... modification de docker docker-compose.yml

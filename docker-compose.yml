@@ -34,7 +34,7 @@ services:
      - /home/app/config:/home/Inao_app/config
 
   letsencrypt:
-    images: jrcs/letsencrypt-nginx-proxy-companion
+    image: jrcs/letsencrypt-nginx-proxy-companion
     restart: on-failure
     volumes: 
       - /home/certs:/etc/nginx/certs:rw

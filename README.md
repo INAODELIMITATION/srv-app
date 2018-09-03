@@ -37,6 +37,7 @@
    apt-get install nano git
    cd /home
    git clone https://github.com/INAODELIMITATION/srv-app.git   
+   cd srv-app
    ```
 - Lancement des micro-services
   ```
